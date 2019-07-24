@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/tutorial_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,6 +26,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: TutorialScreen(),
+    );
   }
 }
