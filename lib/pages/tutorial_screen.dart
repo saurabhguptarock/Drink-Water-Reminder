@@ -13,7 +13,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: TutorialCard3(),
+      child: TutorialCard1(),
     );
   }
 }

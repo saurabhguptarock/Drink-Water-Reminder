@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   shared_preferences: ^0.5.3+4
   provider: ^3.0.0+1
+  numberpicker: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -41,8 +42,11 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/images/avatar_female.png
-   - assets/images/avatar_male.png
+    - assets/images/avatar_female.png
+    - assets/images/avatar_male.png
+    - assets/images/weight.jpg
+    - assets/images/sleeping.jpg
+    - assets/images/waking.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

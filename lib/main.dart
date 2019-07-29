@@ -1,3 +1,4 @@
+import 'package:drink_water_reminder/pages/generating_profile.dart';
 import 'package:flutter/material.dart';
 import 'pages/tutorial_screen.dart';
 
@@ -27,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: TutorialScreen(),
+      body: GeneratingProfile(),
     );
   }
 }

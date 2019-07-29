@@ -1,6 +1,7 @@
 import 'package:drink_water_reminder/extra/tutorialbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:numberpicker/numberpicker.dart';
 
 class TutorialCard1 extends StatelessWidget {
   const TutorialCard1({Key key}) : super(key: key);
@@ -151,6 +152,7 @@ class TutorialCard3 extends StatefulWidget {
 }
 
 class _TutorialCard3State extends State<TutorialCard3> {
+  var initialVal = 60;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -166,8 +168,187 @@ class _TutorialCard3State extends State<TutorialCard3> {
               )),
         ),
         Positioned(
-          child: Row(
-            children: <Widget>[],
+          top: 250,
+          child: Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: <Widget>[
+                Container(
+                    width: 200, child: Image.asset('assets/images/weight.jpg')),
+                NumberPicker.integer(
+                  initialValue: initialVal,
+                  itemExtent: 55,
+                  minValue: 1,
+                  maxValue: 400,
+                  onChanged: (val) {
+                    setState(() {
+                      initialVal = val;
+                    });
+                  },
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child: Text(
+                    'KG',
+                    style: TextStyle(
+                        color: Color.fromRGBO(34, 148, 240, 1),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+        TutorialButton(
+          text: 'NEXT',
+        )
+      ],
+    );
+  }
+}
+
+class TutorialCard4 extends StatefulWidget {
+  TutorialCard4({Key key}) : super(key: key);
+
+  _TutorialCard4State createState() => _TutorialCard4State();
+}
+
+class _TutorialCard4State extends State<TutorialCard4> {
+  var initialValMin = 8;
+  var initialValSec = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Positioned(
+          top: MediaQuery.of(context).padding.top + 70,
+          child: Container(
+              alignment: Alignment.center,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                'Wake-up time',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              )),
+        ),
+        Positioned(
+          top: 250,
+          child: Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: <Widget>[
+                Container(
+                    width: 200, child: Image.asset('assets/images/waking.jpg')),
+                NumberPicker.integer(
+                  initialValue: initialValMin,
+                  itemExtent: 55,
+                  minValue: 1,
+                  maxValue: 24,
+                  onChanged: (val) {
+                    setState(() {
+                      initialValMin = val;
+                    });
+                  },
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child: Text(
+                    ':',
+                    style: TextStyle(
+                        color: Color.fromRGBO(34, 148, 240, 1),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35),
+                  ),
+                ),
+                NumberPicker.integer(
+                  initialValue: initialValSec,
+                  itemExtent: 55,
+                  minValue: 0,
+                  maxValue: 59,
+                  onChanged: (val) {
+                    setState(() {
+                      initialValSec = val;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+        TutorialButton(
+          text: 'NEXT',
+        )
+      ],
+    );
+  }
+}
+
+class TutorialCard5 extends StatefulWidget {
+  TutorialCard5({Key key}) : super(key: key);
+
+  _TutorialCard5State createState() => _TutorialCard5State();
+}
+
+class _TutorialCard5State extends State<TutorialCard5> {
+  var initialValMin = 22;
+  var initialValSec = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Positioned(
+          top: MediaQuery.of(context).padding.top + 70,
+          child: Container(
+              alignment: Alignment.center,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                'Bedtime',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              )),
+        ),
+        Positioned(
+          top: 250,
+          child: Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: <Widget>[
+                Container(
+                    width: 200,
+                    child: Image.asset('assets/images/sleeping.jpg')),
+                NumberPicker.integer(
+                  initialValue: initialValMin,
+                  itemExtent: 55,
+                  minValue: 1,
+                  maxValue: 24,
+                  onChanged: (val) {
+                    setState(() {
+                      initialValMin = val;
+                    });
+                  },
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child: Text(
+                    ':',
+                    style: TextStyle(
+                        color: Color.fromRGBO(34, 148, 240, 1),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35),
+                  ),
+                ),
+                NumberPicker.integer(
+                  initialValue: initialValSec,
+                  itemExtent: 55,
+                  minValue: 0,
+                  maxValue: 59,
+                  onChanged: (val) {
+                    setState(() {
+                      initialValSec = val;
+                    });
+                  },
+                ),
+              ],
+            ),
           ),
         ),
         TutorialButton(
